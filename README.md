@@ -2,32 +2,32 @@
 ## 使用说明
 1. 部署Cloudflare Worker
    
-注册并登录Cloudflare账户：如果您还没有Cloudflare账户，请先注册一个。
+   注册并登录Cloudflare账户：如果您还没有Cloudflare账户，请先注册一个。
 
-创建Worker：
+   创建Worker：
 
-登录Cloudflare仪表盘。
+   登录Cloudflare仪表盘。
 
-选择您的域名，然后导航到“Workers”部分。
+   选择您的域名，然后导航到“Workers”部分。
 
-点击“创建Worker”，并选择“从脚本创建”。
+   点击“创建Worker”，并选择“从脚本创建”。
 
-将上述提供的Worker脚本粘贴到编辑器中。
+   将上述提供的Worker脚本粘贴到编辑器中。
 
-保存并部署Worker。
+   保存并部署Worker。
 
 
 2. 使用示例
-假设您的Worker部署在b.com，并且您配置了a.com.b.com指向Worker。
+   假设您的Worker部署在b.com，并且您配置了a.com.b.com指向Worker。
 
-您可以通过访问a.com.b.com来访问目标域名a.com的内容。
+   您可以通过访问a.com.b.com来访问目标域名a.com的内容。
 
 3. 注意事项
-安全性：确保您代理的目标域名是您有权访问的，并且遵守相关法律法规。
+   安全性：确保您代理的目标域名是您有权访问的，并且遵守相关法律法规。
 
-性能：反向代理可能会影响性能，特别是在处理大量请求时。
+   性能：反向代理可能会影响性能，特别是在处理大量请求时。
 
-兼容性：确保目标网站的内容类型在contentTypesToProcess列表中，以便正确处理。
+   兼容性：确保目标网站的内容类型在contentTypesToProcess列表中，以便正确处理。
 
 ## 免责说明
 示例代码：此脚本为示例代码，仅供学习和参考使用。在生产环境中使用前，请确保对其进行充分测试，并根据需要进行修改和优化。
