@@ -22,7 +22,15 @@ const contentTypesToProcess = [
   'text/javascript',
 ];
 
+// 定义允许访问的国家列表
+const allowedCountries = ['CN', 'DE']; // 例如，只允许中国大陆和德国访问
+
 async function handleRequest(request) {
+  // 检查是否允许访问
+  if (!request.cf.country || !allowedCountries.includes(request.cf.country)) {
+    return new Response('Access denied for your country.', { status: 403 });
+  }
+
   const url = new URL(request.url);
   const { host, pathname } = url;
 
@@ -98,7 +106,7 @@ async function handleRequest(request) {
       originalText = await response.text();
     }
 
-    // 只替换主域名（如 a.com），而不替换子域名（如 exp.a.com）
+    // 只替换主域名（如 dmhy.org），而不替换子域名（如 dl.dmhy.org）
     const mainDomainRegex = new RegExp(`(https?:\\/\\/|^)${targetDomain.replace(/\./g, '\\.')}(\\/|$)`, 'g');
     let modifiedText = originalText.replace(mainDomainRegex, `$1${host}$2`);
 
