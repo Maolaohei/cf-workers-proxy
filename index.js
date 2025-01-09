@@ -22,7 +22,7 @@ const contentTypesToProcess = [
   'text/javascript',
 ];
 
-// 定义允许访问的国家列表
+// 定义允许访问的国家和地区列表
 const allowedCountries = ['CN', 'DE']; // 例如，只允许中国大陆和德国访问
 
 async function handleRequest(request) {
